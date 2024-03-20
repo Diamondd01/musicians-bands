@@ -6,7 +6,6 @@ const sequelize = new Sequelize({
 });
 // TODO - create the new sequelize connection
 
-
 module.exports = {
     sequelize,
     DataTypes

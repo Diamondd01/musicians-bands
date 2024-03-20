@@ -11,10 +11,11 @@ describe('Band, Musician, and Song Models', () => {
         // test suite is run
         await sequelize.sync({ force: true });
     })
-
+  
     test('can create a Band', async () => {
         // TODO - test creating a band
-        expect('NO TEST').toBe('EXPECTED VALUE HERE');
+        const newBand = await Band.create ({name: "Diamondz", genre:"RNB"})
+        expect(newBand.genre).toBe("RNB");
     })
 
     test('can create a Musician', async () => {
