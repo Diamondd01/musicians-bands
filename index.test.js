@@ -42,4 +42,23 @@ describe('Band, Musician, and Song Models', () => {
         // TODO - test deleting a musician
         expect('NO TEST').toBe('EXPECTED VALUE HERE');
     })
+    
+    test('testing out finding the musician name from band in the db', async () => {
+        const foundBand = await Band.findAll();
+
+        const newMusician = await Musician.create({
+            name: "greg",
+            instrument: "bongos"
+        })
+
+        console.log("TEST RIGHT HERE: " + foundBand[0]);
+
+        await foundBand[0].addMusician(newMusician);
+
+        console.log("TEST 2 RIGHT HERE: " + await foundBand[0].getMusicians())
+
+        let musicianFoundInBand = await foundBand[0].getMusicians();
+        
+        expect(musicianFoundInBand[0].name).toBe("greg");
+    })
 })
