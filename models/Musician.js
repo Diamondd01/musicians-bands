@@ -5,7 +5,7 @@ let Musician;
 
 Musician = sequelize.define('Musician', {
     name:DataTypes.STRING,
-    instruement:DataTypes.STRING
+    instrument:DataTypes.STRING
 })
 
 module.exports = {
